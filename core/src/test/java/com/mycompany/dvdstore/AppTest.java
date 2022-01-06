@@ -1,4 +1,4 @@
-package com.moovieslocation.dvdmanager;
+package com.mycompany.dvdstore;
 
 import static org.junit.Assert.assertTrue;
 
