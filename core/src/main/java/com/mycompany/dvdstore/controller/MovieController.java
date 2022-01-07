@@ -15,7 +15,6 @@ public class MovieController {
 
     public static void AddMovie(){
         Movie newMovie = new Movie();
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Entrez le titre");
         String title = sc.nextLine();
