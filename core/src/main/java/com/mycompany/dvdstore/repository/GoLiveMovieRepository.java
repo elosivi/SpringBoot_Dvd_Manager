@@ -11,6 +11,7 @@ public class GoLiveMovieRepository {
 
 
     static FileWriter writer;
+    MovieRepositoryInterface movieRepositoryInterface;
 
     public static void add(Movie movie){
 
