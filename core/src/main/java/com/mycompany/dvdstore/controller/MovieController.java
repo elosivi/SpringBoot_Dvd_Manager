@@ -9,6 +9,14 @@ public class MovieController {
 
     private static MovieServiceInterface movieServiceInterface;
 
+    public static MovieServiceInterface getMovieServiceInterface() {
+        return movieServiceInterface;
+    }
+
+    public static void setMovieServiceInterface(MovieServiceInterface movieServiceInterface) {
+        MovieController.movieServiceInterface = movieServiceInterface;
+    }
+
     public void addUsingConsole(){
         AddMovie();
     }

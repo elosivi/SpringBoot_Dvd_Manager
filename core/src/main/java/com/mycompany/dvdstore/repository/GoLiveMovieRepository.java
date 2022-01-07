@@ -4,16 +4,13 @@ import com.mycompany.dvdstore.entity.Movie;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class GoLiveMovieRepository {
+public class GoLiveMovieRepository implements MovieRepositoryInterface{
 
 
     static FileWriter writer;
-    MovieRepositoryInterface movieRepositoryInterface;
 
-    public static void add(Movie movie){
+    public void add(Movie movie){
 
         try{
             writer = new FileWriter("D:\\DEV\\JAVA\\Udemy projects\\SpringBoot_formation_Udemy\\SpringBoot_Dvd_Manager\\movies.txt", true);
