@@ -10,9 +10,9 @@ import java.util.List;
 public class GoLiveMovieRepository {
 
 
-    FileWriter writer;
+    static FileWriter writer;
 
-    public void add(Movie movie){
+    public static void add(Movie movie){
 
         try{
             writer = new FileWriter("D:\\DEV\\JAVA\\Udemy projects\\SpringBoot_formation_Udemy\\SpringBoot_Dvd_Manager\\movies.txt", true);
