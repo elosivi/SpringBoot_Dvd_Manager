@@ -9,13 +9,20 @@ public class MovieController {
 
     private static MovieServiceInterface movieServiceInterface;
 
+    public static MovieServiceInterface getMovieServiceInterface() {
+        return movieServiceInterface;
+    }
+
+    public static void setMovieServiceInterface(MovieServiceInterface movieServiceInterface) {
+        MovieController.movieServiceInterface = movieServiceInterface;
+    }
+
     public void addUsingConsole(){
         AddMovie();
     }
 
     public static void AddMovie(){
         Movie newMovie = new Movie();
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Entrez le titre");
         String title = sc.nextLine();

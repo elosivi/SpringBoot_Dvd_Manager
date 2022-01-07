@@ -35,12 +35,20 @@ Dans le cadre du repo : com.mycompany.dvdstore.repository.GoLiveMovieRepository 
 * Pas de vérification des saisies 
 ---
 
-**SPEC 3** 2.exo3
+**SPEC 3** 2.exo3 / branche DEV_Section2.9_Exo3
 On va mettre en application les principes de la programmation par contrat en créant des interfaces pour nos Repository et notre service.
 
 **DEV**:
+création d'interfaces pour le service et le repository
 
+**TEST**:
+nullpointerexception ok, sera corrigé dans le prochain exo
+---
 
+**SPEC 4** 2.exo4 / branche DEV_Section2.9_Exo4 / INJECTION DEPENDANCES
+Maintenant que notre architecture référence des interfaces, nous allons y injecter les classes réelles.
+
+**DEV**:
 
 
 
