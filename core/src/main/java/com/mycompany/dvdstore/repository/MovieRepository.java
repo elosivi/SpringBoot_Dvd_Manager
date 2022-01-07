@@ -8,6 +8,7 @@ import java.util.List;
 public class MovieRepository {
 
     public List<Movie> movies = new ArrayList<>();
+    MovieRepositoryInterface movieRepositoryInterface;
 
     public void add(Movie movie){
         movies.add(movie);
