@@ -2,13 +2,10 @@ package com.mycompany.dvdstore.controller;
 
 import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.repository.GoLiveMovieRepository;
-import com.mycompany.dvdstore.service.MovieService;
 
 import java.util.Scanner;
 
 public class MovieController {
-
-
 
     public void addUsingConsole(){
         AddMovie();

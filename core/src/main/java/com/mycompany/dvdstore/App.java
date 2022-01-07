@@ -7,7 +7,7 @@ import com.mycompany.dvdstore.service.MovieService;
 import java.util.Scanner;
 
 /**
- * by Elodie BARBE
+ * by Elodie BARBE elodiebarbe.pro@gmail.com
  * janv 2022
  * Udemy training project
  */
