@@ -1,7 +1,7 @@
 package com.mycompany.dvdstore;
 
 import com.mycompany.dvdstore.controller.MovieController;
-import com.mycompany.dvdstore.repository.GoLiveMovieRepository;
+import com.mycompany.dvdstore.repository.FileMovieRepository;
 import com.mycompany.dvdstore.service.DefaultMovieService;
 
 
@@ -20,10 +20,10 @@ public class App
 
         MovieController movieController = new MovieController();
         DefaultMovieService movieService = new DefaultMovieService();
-        GoLiveMovieRepository goLiveMovieRepository = new GoLiveMovieRepository();
+        FileMovieRepository fileMovieRepository = new FileMovieRepository();
 
         movieController.setMovieServiceInterface(movieService);
-        movieService.setMovieRepositoryInterface(goLiveMovieRepository);
+        movieService.setMovieRepositoryInterface(fileMovieRepository);
 
         movieController.addUsingConsole();
     }
