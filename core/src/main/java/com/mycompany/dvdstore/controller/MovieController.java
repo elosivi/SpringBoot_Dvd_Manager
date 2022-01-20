@@ -34,24 +34,24 @@ public class MovieController {
 
         movieServiceInterface.registerMovie(newMovie);
 
-        AddOneMore();
+        //AddOneMore();
 
     }
 
-    public static void AddOneMore(){
-
-            System.out.println(" Add one more moovie? Y/N");
-            Scanner sc = new Scanner(System.in);
-            String response = sc.nextLine();
-
-            if(response.equalsIgnoreCase("y")){
-                AddMovie();
-            }else if( response.equalsIgnoreCase("n")) {
-                System.out.println("Ok thank!");
-            }else{
-                System.out.println("wrong choice, please try again");
-                AddOneMore();
-            }
-
-    }
+//    public static void AddOneMore(){
+//
+//            System.out.println(" Add one more moovie? Y/N");
+//            Scanner sc = new Scanner(System.in);
+//            String response = sc.nextLine();
+//
+//            if(response.equalsIgnoreCase("y")){
+//                AddMovie();
+//            }else if( response.equalsIgnoreCase("n")) {
+//                System.out.println("Ok thank!");
+//            }else{
+//                System.out.println("wrong choice, please try again");
+//                AddOneMore();
+//            }
+//
+//    }
 }
