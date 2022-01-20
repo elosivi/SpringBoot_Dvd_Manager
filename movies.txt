@@ -9,3 +9,7 @@ Avengers ; Science- fiction
 Rencontre du 3ème type ; Fiction
 toto ; tutu
 Joker ; Drame
+Titanic ; Drame
+Dodge Ball ; Comédie
+titi ; toto
+test ; test
