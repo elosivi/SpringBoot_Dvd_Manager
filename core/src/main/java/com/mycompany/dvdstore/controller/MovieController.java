@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class MovieController {
 
-    private static MovieServiceInterface movieServiceInterface;
+    private static MovieServiceInterface movieService;
 
-    public static MovieServiceInterface getMovieServiceInterface() {
-        return movieServiceInterface;
+    public static MovieServiceInterface getMovieService() {
+        return movieService;
     }
 
-    public static void setMovieServiceInterface(MovieServiceInterface movieServiceInterface) {
-        MovieController.movieServiceInterface = movieServiceInterface;
+    public static void setMovieService(MovieServiceInterface movieService) {
+        MovieController.movieService = movieService;
     }
 
     public void addUsingConsole(){
@@ -32,26 +32,8 @@ public class MovieController {
         String genre = sc.nextLine();
         newMovie.setGenre(genre);
 
-        movieServiceInterface.registerMovie(newMovie);
-
-        //AddOneMore();
+        movieService.registerMovie(newMovie);
 
     }
 
-//    public static void AddOneMore(){
-//
-//            System.out.println(" Add one more moovie? Y/N");
-//            Scanner sc = new Scanner(System.in);
-//            String response = sc.nextLine();
-//
-//            if(response.equalsIgnoreCase("y")){
-//                AddMovie();
-//            }else if( response.equalsIgnoreCase("n")) {
-//                System.out.println("Ok thank!");
-//            }else{
-//                System.out.println("wrong choice, please try again");
-//                AddOneMore();
-//            }
-//
-//    }
 }
