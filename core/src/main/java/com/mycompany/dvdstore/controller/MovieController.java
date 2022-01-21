@@ -2,26 +2,24 @@ package com.mycompany.dvdstore.controller;
 
 import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.service.MovieServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Scanner;
 
 public class MovieController {
 
-    private static MovieServiceInterface movieService;
+    @Autowired
+    private MovieServiceInterface movieService;
 
-    public static MovieServiceInterface getMovieService() {
+    public MovieServiceInterface getMovieService() {
         return movieService;
     }
 
-    public static void setMovieService(MovieServiceInterface movieService) {
-        MovieController.movieService = movieService;
+    public void setMovieService(MovieServiceInterface movieService) {
+        this.movieService = movieService;
     }
 
     public void addUsingConsole(){
-        AddMovie();
-    }
-
-    public static void AddMovie(){
         Movie newMovie = new Movie();
         Scanner sc = new Scanner(System.in);
         System.out.println("Entrez le titre");
@@ -33,7 +31,6 @@ public class MovieController {
         newMovie.setGenre(genre);
 
         movieService.registerMovie(newMovie);
-
     }
 
 }
