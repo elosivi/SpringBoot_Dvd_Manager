@@ -21,7 +21,7 @@ Pour l'instant : récupération des données via la console + mémorisation inte
 ---
 **SPEC 2** : 2.exo2
 préparer l'architecture de notre application DVDStore à la possibilité d'interagir via la console et via le web au choix du client.
-Dans le cadre du repo : com.mycompany.dvdstore.repository.FileMovieRepository . L'implémentation de cette méthode va différer de l'original en ajoutant les informations du film à enregistrer dans un fichier movies.txt qui devra se situer dans C:\\temp
+Dans le cadre du repo : com.mycompany.dvdstore.repository.file.FileMovieRepository . L'implémentation de cette méthode va différer de l'original en ajoutant les informations du film à enregistrer dans un fichier movies.txt qui devra se situer dans C:\\temp
 
 **DEV** : 
 * ajout d'un package controller pour checker demande client et orienter l'app vers l'un des 2 repository : même méthode "add" mais l'une via console et l'autre via web.
