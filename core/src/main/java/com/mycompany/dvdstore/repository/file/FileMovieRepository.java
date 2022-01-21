@@ -1,20 +1,23 @@
-package com.mycompany.dvdstore.repository;
+package com.mycompany.dvdstore.repository.file;
 
 import com.mycompany.dvdstore.entity.Movie;
+import com.mycompany.dvdstore.repository.MovieRepositoryInterface;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileMovieRepository implements MovieRepositoryInterface{
+@Repository
+public class FileMovieRepository implements MovieRepositoryInterface {
 
+    @Value("${movies.file.location}")
     private File file;
-    String path = "D:\\DEV\\JAVA\\Udemy projects\\SpringBoot_formation_Udemy\\SpringBoot_Dvd_Manager\\movies.csv";
 
     public void add(Movie movie){
         FileWriter writer;
         try{
-            //writer = new FileWriter(path, true);
             writer = new FileWriter(file,true);// check value (path) from bean generated into applicationContext.xml
             writer.write(movie.getTitle() + " ; "+ movie.getGenre() + "\n");
             writer.close();
