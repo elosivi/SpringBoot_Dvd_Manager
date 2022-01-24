@@ -7,14 +7,14 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+//@Repository
 public class MemoryMovieRepository implements MovieRepositoryInterface {
 
     public List<Movie> movies = new ArrayList<>();
 
     public void add(Movie movie){
         movies.add(movie);
-        System.out.println("The movie " + movie.getTitle()+ " / "+ movie.getGenre()+ " has been added.");
+        System.out.println("The movie " + movie.getTitle()+ " / "+ movie.getGenre()+ " has been added into memory");
     }
 
 }
