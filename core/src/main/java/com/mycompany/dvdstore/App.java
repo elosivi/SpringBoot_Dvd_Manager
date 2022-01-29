@@ -17,9 +17,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Welcome!\n" );
         //ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
-        ApplicationContext context = SpringApplication.run(App.class);
+        ApplicationContext context = SpringApplication.run(App.class, args);
 
         MovieController movieController = context.getBean(MovieController.class);
 
