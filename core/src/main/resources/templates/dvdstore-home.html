@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DVD manager</title>
+</head>
+<body>
+    <H1>Home</H1>
+        <h2>Liste des dvd disponibles</h2>
+        <table>
+            <tr th:each="movie: ${movies}">
+                <td th:text="${movie.title}"></td>
+                <td th:text="${movie.genre}"></td>
+            </tr>
+        </table>
+</body>
+</html>
