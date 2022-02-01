@@ -1,14 +1,16 @@
-package com.mycompany.dvdstore.controller;
+package com.mycompany.dvdstore.web.controller;
 
 import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.service.MovieServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Scanner;
+import java.util.List;
 
 @Controller
-public class MovieController {
+public class HomeController {
 
     @Autowired
     private MovieServiceInterface movieService;
@@ -21,18 +23,12 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    public void addUsingConsole(){
-        Movie newMovie = new Movie();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Entrez le titre");
-        String title = sc.nextLine();
-        newMovie.setTitle(title);
+    @RequestMapping("/dvdstore-home")
+    public @ModelAttribute("movies") List<Movie> displayHome(){
+        System.out.println("tadammmm!");
+        List<Movie> movies = movieService.getMovieList();
 
-        System.out.println("Entrez le genre");
-        String genre = sc.nextLine();
-        newMovie.setGenre(genre);
-
-        movieService.registerMovie(newMovie);
+        return movies;
     }
 
 }

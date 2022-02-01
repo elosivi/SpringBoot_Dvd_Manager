@@ -1,4 +1,4 @@
-package com.mycompany.dvdstore.controller;
+package com.mycompany.dvdstore.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +10,6 @@ public class AboutUsController {
     public String displayFullDetails(){
         System.out.println("Tentative d'affichage de l'a-propos");
         return"about-us";
-        //return"";
+
     }
 }
