@@ -15,17 +15,22 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     @Value("${movies.file.location}")
     private File file;
 
+
     public void add(Movie movie){
         FileWriter writer;
+
+        long lastId=list().stream().map(Movie::getId).max(Long::compare).orElse(0L);
+        movie.setId(lastId+1);
+
         try{
             writer = new FileWriter(file,true);// check value (path) from bean generated into applicationContext.xml
-            writer.write(movie.getTitle() + " ; "+ movie.getGenre() + "\n");
+            writer.write(movie.getId() + ";"+ movie.getTitle() + ";"+ movie.getGenre() + ";"+ movie.getDescription() + "\n");
             writer.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("The movie " + movie.getTitle()+ " / "+ movie.getGenre()+ " has been added into the file movie.csv.");
+        System.out.println("The movie #" + movie.getId()+ " : " + movie.getTitle()+ " / "+ movie.getGenre()+ " has been added into the file movie.csv.");
         System.out.println(file);
 
     }
@@ -70,7 +75,7 @@ public class FileMovieRepository implements MovieRepositoryInterface {
                 final Movie movie=new Movie();
                 final String[] movieInfo = line.split("\\;");
                 final long movieId=Long.parseLong(movieInfo[0]);
-                movie.setId( movieId );// id is a Long not a String...
+                movie.setId(movieId);
                 movie.setTitle(movieInfo[1]);
                 movie.setGenre(movieInfo[2]);
                 movie.setDescription(movieInfo[3]);

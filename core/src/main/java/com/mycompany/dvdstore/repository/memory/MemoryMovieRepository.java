@@ -12,8 +12,10 @@ import java.util.List;
 public class MemoryMovieRepository implements MovieRepositoryInterface {
 
     public List<Movie> movies = new ArrayList<>();
+    static int counter;
 
     public void add(Movie movie){
+        movie.setId((long) ++counter);
         movies.add(movie);
         System.out.println("The movie " + movie.getTitle()+ " / "+ movie.getGenre()+ " has been added into memory");
     }

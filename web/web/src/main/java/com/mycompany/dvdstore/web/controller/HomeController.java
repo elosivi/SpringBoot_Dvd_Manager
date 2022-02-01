@@ -33,8 +33,8 @@ public class HomeController {
     }
 
     @GetMapping("/add-movie-form")
-    public void displayMovieForm(@ModelAttribute Movie movie){
-
+    public String displayMovieForm(@ModelAttribute Movie movie){
+        return "add-movie-form";
     }
 
 }
