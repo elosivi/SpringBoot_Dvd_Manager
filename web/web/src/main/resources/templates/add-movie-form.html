@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DVD manager</title>
+</head>
+<body>
+        <H1>Ajouter un film</H1>
+
+        <form th:action="@{/movie}" method="POST" th:object="${movie}">
+
+<!--            <label>Titre:</label>-->
+<!--            <input type="text" th:field="*{title}"/>-->
+
+<!--            <label>Genre:</label>-->
+<!--            <input type="text" th:field="*{genre}"/>-->
+
+<!--            <label>Description:</label>-->
+<!--            <input type="text" th:field="*{ddescription}"/>-->
+
+            <input type="submit" value="ok"/>
+        </form>
+
+</body>
+</html>
