@@ -28,9 +28,6 @@ public class HomeController {
     @RequestMapping("/dvdstore-home")
     public @ModelAttribute("movies") List<Movie> displayHome(){
         System.out.println("tadammmm!");
-        List movies = movieService.getMovieList();
-        Movie movie = (Movie) movies.get(0);
-        System.out.println(movie.getId());
         return movieService.getMovieList();
     }
 
