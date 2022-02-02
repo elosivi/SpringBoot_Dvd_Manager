@@ -11,8 +11,9 @@
 
             <label>Titre:</label>
             <input type="text" th:field="*{title}"/>
+            <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
 
-            <label>Genre:</label>
+            <label>Genre: (choose into the list)</label>
             <select th:field="*{genre}">
                 <option th:value="COMEDIE" th:text="Comédie"></option>
                 <option th:value="HORREUR" th:text="Horreur"></option>
@@ -22,9 +23,11 @@
                 <option th:value="DRAME" th:text="Drame"></option>
                 <option th:value="ANIMATION" th:text="Animation"></option>
             </select>
+            <div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></div>
 
             <label>Description:</label>
             <textarea th:field="*{description}"/>
+            <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
 
             <input type="submit" value="ok"/>
         </form>

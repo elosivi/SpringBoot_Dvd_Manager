@@ -16,7 +16,7 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     private File file;
 
 
-    public void add(Movie movie){
+    public Movie add(Movie movie){
         FileWriter writer;
 
         long lastId=list().stream().map(Movie::getId).max(Long::compare).orElse(0L);
@@ -32,7 +32,7 @@ public class FileMovieRepository implements MovieRepositoryInterface {
         }
         System.out.println("The movie #" + movie.getId()+ " : " + movie.getTitle()+ " / "+ movie.getGenre()+ " has been added into the file movie.csv.");
         System.out.println(file);
-
+        return movie;
     }
     @Override
     public Movie getById(long id) {

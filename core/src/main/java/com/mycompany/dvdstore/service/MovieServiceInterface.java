@@ -7,6 +7,6 @@ import java.util.List;
 public interface MovieServiceInterface {
     Movie getMovieById(long id);
 
-    public void registerMovie(Movie movie);
+    Movie registerMovie(Movie movie);
     List<Movie> getMovieList();
 }
