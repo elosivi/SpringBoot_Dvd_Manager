@@ -2,6 +2,11 @@ package com.mycompany.dvdstore.service;
 
 import com.mycompany.dvdstore.entity.Movie;
 
+import java.util.List;
+
 public interface MovieServiceInterface {
-    public void registerMovie(Movie movie);
+    Movie getMovieById(long id);
+
+    Movie registerMovie(Movie movie);
+    List<Movie> getMovieList();
 }
