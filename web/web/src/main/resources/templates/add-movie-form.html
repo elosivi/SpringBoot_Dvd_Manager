@@ -11,13 +11,15 @@
 
             <label>Titre:</label>
             <input type="text" th:field="*{title}"/>
+            <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color:red"></div>
 
             <label>Genre:</label>
             <input type="text" th:field="*{genre}"/>
+            <div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}" style="color:red"></div>
 
             <label>Description:</label>
             <input type="text" th:field="*{description}"/>
-
+            <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" style="color:red"></div>
             <input type="submit" value="ok"/>
         </form>
 
