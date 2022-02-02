@@ -4,9 +4,10 @@ import java.util.List;
 
 public class Movie {
 
-    private long id;
+    private Long id;
     private String title;
     private int copiesNbAvailable;
+    private String description;
     private String genre;
     private String mainActor;
     private List<String> actorsList;
@@ -15,7 +16,7 @@ public class Movie {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,5 +58,13 @@ public class Movie {
 
     public void setActorsList(List<String> actorsList) {
         this.actorsList = actorsList;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
