@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>DVD manager</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
         <a href="/webui/add-movie-form">Ajouter un film</a></li>
         <H1>DVDStore : LA boutique de DVD en ligne</H1>
         <h2>Liste des dvd disponibles</h2>
-        <table border="1">
-            <tr th:each="movie: ${movies}">
-                <td>
-                    <a th:href="@{/movie/{id}(id=${movie.id})}" th:text="${movie.title}"/>
-                </td>
-                <td th:text="${movie.genre}"></td>
-            </tr>
-        </table>
+        <section class="container">
+            <div class="left-half">
+                <article id="movie-list">
+
+                </article>
+            </div>
+            <div class="right-half">
+                <article id="movie-detail">
+
+                </article>
+            </div>
+        </section>
+        <script th:src="@{/js/script.js}"></script>
 </body>
 </html>

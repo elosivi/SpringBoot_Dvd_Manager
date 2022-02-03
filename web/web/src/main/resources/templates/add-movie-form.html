@@ -7,7 +7,7 @@
 <body>
         <H1>Ajouter un film</H1>
 
-        <form th:action="@{/movie}" method="POST" th:object="${movieForm}">
+        <form th:action="@{/movie/add}" method="POST" th:object="${movieForm}">
 
             <label>Titre:</label>
             <input type="text" th:field="*{title}"/>
