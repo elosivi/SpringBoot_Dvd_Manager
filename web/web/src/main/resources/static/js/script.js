@@ -1,5 +1,5 @@
 
-fetch('../movie')
+fetch('movie')
     .then(res => res.json())
     .then(res => {
         var invoiceListNode = document.getElementById('movie-list');
