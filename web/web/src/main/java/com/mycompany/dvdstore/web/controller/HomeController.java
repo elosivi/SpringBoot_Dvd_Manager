@@ -4,6 +4,7 @@ import com.mycompany.dvdstore.service.MovieServiceInterface;
 import com.mycompany.dvdstore.web.form.MovieForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -21,14 +22,9 @@ public class HomeController {
         this.movieService = movieService;
     }
 
-//    @GetMapping("/dvdstore-home")
-//    public @ModelAttribute("movies") List<Movie> displayHome(){
-//        System.out.println("tadammmm!");
-//        return movieService.getMovieList();
-//    }
-        @GetMapping("/dvdstore-home")
-            public void displayHome(){;
-        }
+    @GetMapping("/dvdstore-home")
+        public void displayHome(Model model){
+    }
 
     @GetMapping("/add-movie-form")
     public String displayMovieForm(@ModelAttribute MovieForm movieForm){

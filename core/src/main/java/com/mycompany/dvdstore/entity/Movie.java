@@ -12,6 +12,22 @@ public class Movie {
     private String mainActor;
     private List<String> actorsList;
 
+    public Movie(Long id, String title, String description, String genre) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.genre = genre;
+    }
+
+    public Movie() {
+    }
+
+    public Movie(Long id, String title, String genre) {
+        this.id = id;
+        this.title = title;
+        this.genre = genre;
+    }
+
     public long getId() {
         return id;
     }

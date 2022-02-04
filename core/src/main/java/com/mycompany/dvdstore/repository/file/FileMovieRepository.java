@@ -3,13 +3,12 @@ package com.mycompany.dvdstore.repository.file;
 import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.repository.MovieRepositoryInterface;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Repository;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+//@Repository
 public class FileMovieRepository implements MovieRepositoryInterface {
 
     @Value("${movies.file.location}")
@@ -36,30 +35,31 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     }
     @Override
     public Movie getById(long id) {
-        final Movie movie = new Movie();
-        movie.setId(id);
-        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
-            for(String line; (line = br.readLine()) != null; ) {
-
-                final String[] allProperties = line.split("\\;");
-                final long nextMovieId=Long.parseLong(allProperties[0]);
-                if (nextMovieId==id) {
-                    movie.setTitle(allProperties[1]);
-                    movie.setGenre(allProperties[2]);
-                    movie.setDescription(allProperties[3]);
-                    return movie;
-                }
-            }
-        } catch (FileNotFoundException e) {
-            System.err.println("FileNotFoundException e");
-            e.printStackTrace();
-        } catch (IOException e) {
-            System.err.println("IOException e");
-            e.printStackTrace();
-        } catch (NumberFormatException e) {
-            System.err.println("A movie from the file does not have a proper id");
-            e.printStackTrace();
-        }
+//        final Movie movie = new Movie(String.valueOf(rs.getLong("ID")), rs.getString("TITLE"), rs.getString("GENRE"));
+//        movie.setId(id);
+//        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
+//            for(String line; (line = br.readLine()) != null; ) {
+//
+//                final String[] allProperties = line.split("\\;");
+//                final long nextMovieId=Long.parseLong(allProperties[0]);
+//                if (nextMovieId==id) {
+//                    movie.setTitle(allProperties[1]);
+//                    movie.setGenre(allProperties[2]);
+//                    movie.setDescription(allProperties[3]);
+//                    return movie;
+//                }
+//            }
+//        } catch (FileNotFoundException e) {
+//            System.err.println("FileNotFoundException e");
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            System.err.println("IOException e");
+//            e.printStackTrace();
+//        } catch (NumberFormatException e) {
+//            System.err.println("A movie from the file does not have a proper id");
+//            e.printStackTrace();
+//        }
+        Movie movie = new Movie();
         movie.setTitle("UNKNOWN");
         movie.setGenre("UNKNOWN");
         movie.setDescription("UNKNOWN");
@@ -70,22 +70,22 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     public List<Movie> list() {
         List<Movie> movies=new ArrayList<>();
 
-        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
-            for(String line; (line = br.readLine()) != null; ) {
-                final Movie movie=new Movie();
-                final String[] movieInfo = line.split("\\;");
-                final long movieId=Long.parseLong(movieInfo[0]);
-                movie.setId(movieId);
-                movie.setTitle(movieInfo[1]);
-                movie.setGenre(movieInfo[2]);
-                movie.setDescription(movieInfo[3]);
-                movies.add(movie);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
+//            for(String line; (line = br.readLine()) != null; ) {
+//                final Movie movie=new Movie(String.valueOf(rs.getLong("ID")), rs.getString("TITLE"), rs.getString("GENRE"));
+//                final String[] movieInfo = line.split("\\;");
+//                final long movieId=Long.parseLong(movieInfo[0]);
+//                movie.setId(movieId);
+//                movie.setTitle(movieInfo[1]);
+//                movie.setGenre(movieInfo[2]);
+//                movie.setDescription(movieInfo[3]);
+//                movies.add(movie);
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         return movies;
     }
 
