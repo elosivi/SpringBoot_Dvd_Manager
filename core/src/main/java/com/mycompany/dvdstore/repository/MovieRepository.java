@@ -27,6 +27,9 @@ public class MovieRepository implements MovieRepositoryInterface{
 
     @Override
     public Movie getById(long id) {
-        return null;
+        return jdbcTemplate.queryForObject("SELECT D, TITLE, GENRE FROM MOVIES FROM MOVIES WHERE ID=?",
+                new Object[]{id},
+                (rs,rowNum) -> new Movie(rs.getLong("ID"),
+                        rs.getString("TITLE"), rs.getString("DESCRIPTION"), rs.getString("GENRE")));
     }
 }
